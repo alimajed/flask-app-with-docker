@@ -9,8 +9,9 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-# copy application file (we can copy directories)
-COPY app.py .
+# copy application file
+RUN mkdir app
+COPY app/ app/
 COPY entrypoint.sh .
 COPY command.sh .
 
